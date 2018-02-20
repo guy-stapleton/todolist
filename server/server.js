@@ -6,4 +6,7 @@ app.use(express.static('public'))
 
 app.use('/', routes)
 
-module.exports = app
+module.exports = (db) => {
+  app.set('db', db)
+  return app
+}
